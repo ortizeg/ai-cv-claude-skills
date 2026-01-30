@@ -35,7 +35,7 @@ site/
 *.pth
 *.onnx
 *.pkl
-wandb/
+/wandb/
 mlruns/
 lightning_logs/
 checkpoints/
