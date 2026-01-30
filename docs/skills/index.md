@@ -61,6 +61,7 @@ Skills for packaging, deploying, and maintaining projects.
 | [PyPI](pypi.md) | Python package publishing | build, twine |
 | [GCP](gcp.md) | Google Cloud Platform services for ML workflows | gcloud, google-cloud-storage, google-cloud-aiplatform |
 | [GitHub Actions](github-actions.md) | CI/CD pipeline configuration | GitHub Actions |
+| [GitHub Repo Setup](github-repo-setup.md) | Repository initialization and configuration | gh CLI |
 | [Pre-commit](pre-commit.md) | Git hook automation | pre-commit |
 | [VS Code](vscode.md) | Editor configuration for ML development | VS Code |
 | [DVC](dvc.md) | Data and model version control | DVC |

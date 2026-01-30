@@ -72,6 +72,7 @@ nav:
     - Matplotlib: skills/matplotlib.md
     - PyPI: skills/pypi.md
     - GitHub Actions: skills/github-actions.md
+    - GitHub Repo Setup: skills/github-repo-setup.md
     - GCP: skills/gcp.md
     - VS Code: skills/vscode.md
     - Pre-commit: skills/pre-commit.md
