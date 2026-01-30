@@ -10,7 +10,7 @@ Production-ready skills framework for computer vision and deep learning projects
 
 A comprehensive, prescriptive framework providing:
 
-- **21 Skills**: Best practices for PyTorch, Pydantic, Docker, testing, and more
+- **25 Skills**: Best practices for PyTorch, Pydantic, Docker, testing, and more
 - **4 Specialized Agents**: Code review, testing, ML engineering, and expert coding
 - **6 Project Archetypes**: Ready-to-use templates for common CV/ML workflows
 - **Enforced Standards**: Type safety, code quality, and testing requirements
@@ -61,14 +61,14 @@ You: "Using ai-cv-claude-skills, create a new pytorch-training-project for objec
 | Data Processing Pipeline | ETL workflows for datasets |
 | Model Zoo | Collection of pretrained models |
 
-### 21 Skills
-Skills cover PyTorch Lightning, Pydantic, code quality, Docker, Hydra, testing, OpenCV, visualization, packaging, CI/CD, editor config, pre-commit hooks, experiment tracking (W&B, MLflow, TensorBoard), data versioning (DVC), ONNX export, abstraction patterns, and library evaluation.
+### 25 Skills
+Skills cover PyTorch Lightning, Pydantic, code quality, Docker, Hydra, testing, OpenCV, visualization, packaging, CI/CD, editor config, pre-commit hooks, experiment tracking (W&B, MLflow, TensorBoard), data versioning (DVC), ONNX export, TensorRT inference, abstraction patterns, library evaluation, and GitHub repository setup.
 
 ## Repository Structure
 
 ```
 ai-cv-claude-skills/
-├── skills/          # 21 individual skill definitions
+├── skills/          # 25 individual skill definitions
 ├── agents/          # 4 agent definitions
 ├── archetypes/      # 6 project templates
 ├── docs/            # MkDocs Material documentation

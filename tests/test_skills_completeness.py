@@ -79,6 +79,7 @@ def test_all_expected_skills_exist() -> None:
         "tensorrt",
         "abstraction-patterns",
         "library-review",
+        "github-repo-setup",
     }
 
     actual = {d.name for d in get_all_skills()}
