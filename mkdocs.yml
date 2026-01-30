@@ -1,0 +1,107 @@
+site_name: AI/CV Claude Skills
+site_description: Production-ready skills framework for computer vision and deep learning projects
+site_author: Enrique G. Ortiz
+site_url: https://ortizeg.github.io/ai-cv-claude-skills/
+repo_url: https://github.com/ortizeg/ai-cv-claude-skills
+repo_name: ortizeg/ai-cv-claude-skills
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+    - First Project: getting-started/first-project.md
+  - Skills:
+    - Overview: skills/index.md
+    - Master Skill: skills/master-skill.md
+    - PyTorch Lightning: skills/pytorch-lightning.md
+    - Pydantic Strict: skills/pydantic-strict.md
+    - Code Quality: skills/code-quality.md
+    - Loguru: skills/loguru.md
+    - Pixi: skills/pixi.md
+    - Docker CV: skills/docker-cv.md
+    - Hydra Config: skills/hydra-config.md
+    - Testing: skills/testing.md
+    - OpenCV: skills/opencv.md
+    - Matplotlib: skills/matplotlib.md
+    - PyPI: skills/pypi.md
+    - GitHub Actions: skills/github-actions.md
+    - GCP: skills/gcp.md
+    - VS Code: skills/vscode.md
+    - Pre-commit: skills/pre-commit.md
+    - Weights & Biases: skills/wandb.md
+    - MLflow: skills/mlflow.md
+    - TensorBoard: skills/tensorboard.md
+    - DVC: skills/dvc.md
+    - ONNX: skills/onnx.md
+    - TensorRT: skills/tensorrt.md
+    - Abstraction Patterns: skills/abstraction-patterns.md
+    - Library Review: skills/library-review.md
+  - Agents:
+    - Overview: agents/index.md
+    - Expert Coder: agents/expert-coder.md
+    - ML Engineer: agents/ml-engineer.md
+    - Code Review: agents/code-review.md
+    - Test Engineer: agents/test-engineer.md
+  - Archetypes:
+    - Overview: archetypes/index.md
+    - PyTorch Training: archetypes/pytorch-training-project.md
+    - CV Inference Service: archetypes/cv-inference-service.md
+    - Research Notebook: archetypes/research-notebook.md
+    - Library Package: archetypes/library-package.md
+    - Data Pipeline: archetypes/data-processing-pipeline.md
+    - Model Zoo: archetypes/model-zoo.md
+  - Guides:
+    - Creating Projects: guides/creating-projects.md
+    - Adding Skills: guides/adding-skills.md
+    - Customization: guides/customization.md
+    - Best Practices: guides/best-practices.md
+  - Examples:
+    - Full Workflow: examples/full-workflow.md
+    - Common Patterns: examples/common-patterns.md

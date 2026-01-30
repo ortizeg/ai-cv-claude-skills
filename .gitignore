@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+.pixi/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+coverage.xml
+
+# Documentation
+site/
+
+# ML artifacts
+*.pt
+*.pth
+*.onnx
+*.pkl
+wandb/
+mlruns/
+lightning_logs/
+checkpoints/
+
+# Data
+data/
+*.h5
+*.hdf5
+*.tfrecord
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
