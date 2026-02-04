@@ -564,6 +564,50 @@ prerelease = true
 prerelease_token = "dev"
 ```
 
+## CI Verification (Required Before Task Completion)
+
+A PR is **not done** until CI is green. Always verify CI after pushing:
+
+```bash
+# Check CI status on a PR
+gh pr checks <PR_NUMBER>
+
+# If a check fails, read the logs
+gh run view <RUN_ID> --log-failed
+
+# Fix the issue, commit, push, and re-check
+```
+
+### Common CI Failures and Fixes
+
+| Failure | Cause | Fix |
+|---------|-------|-----|
+| `ruff format --check` fails | Pre-commit ruff version differs from pixi ruff | Update `.pre-commit-config.yaml` rev to match `pixi run ruff -- --version` |
+| `ruff check` fails | New lint violations | Run `pixi run lint` locally and fix |
+| `mypy` fails | Type errors | Run `pixi run typecheck` locally and fix |
+| `pytest` fails | Test failures | Run `pixi run test` locally and fix |
+| Merge conflicts | Branch diverged from base | Merge/rebase base branch, resolve conflicts, re-run checks |
+
+### Workflow
+
+1. Run local checks: `pixi run format && pixi run lint && pixi run test`
+2. Push and create PR
+3. Run `gh pr checks <PR#>` -- wait for all checks to report
+4. If any check fails: read logs, fix locally, push, repeat from step 3
+5. Task is complete only when all checks are green
+
+### Tool Version Alignment
+
+Keep formatter/linter versions synchronized across all environments:
+
+| Tool | Where | Must Match |
+|------|-------|------------|
+| ruff | `.pre-commit-config.yaml` rev | `pixi run ruff -- --version` |
+| ruff | CI (`pixi run format-check`) | pixi.lock |
+| mypy | CI (`pixi run typecheck`) | pixi.lock |
+
+If pre-commit hooks reformat files that CI then rejects, the versions are out of sync. Update `.pre-commit-config.yaml` to match the pixi-managed version.
+
 ## Best Practices
 
 1. **Use pixi in CI** -- keep CI commands identical to local development
@@ -576,3 +620,5 @@ prerelease_token = "dev"
 8. **Use environments** -- require approval for production deployments
 9. **Matrix strategically** -- test Python versions and OS combinations that matter
 10. **Document runner requirements** -- label self-hosted runners clearly
+11. **Verify CI after every push** -- never consider a task done until all checks pass
+12. **Fix CI immediately** -- a broken CI blocks the entire team; treat failures as highest priority
