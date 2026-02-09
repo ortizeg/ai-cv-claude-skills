@@ -86,4 +86,4 @@ The Master Skill's conventions are assumed by every other skill. When the PyTorc
 
 ## Full Reference
 
-See the complete skill definition in [`skills/master-skill/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/master-skill/SKILL.md) for the full set of conventions, including docstring format, project layout rules, and anti-patterns to avoid.
+See the complete skill definition in [`skills/master-skill/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/master-skill/SKILL.md) for the full set of conventions, including docstring format, project layout rules, and anti-patterns to avoid.

@@ -102,4 +102,4 @@ A well-configured editor eliminates friction. This skill teaches Claude Code to 
 
 ## Full Reference
 
-See [`skills/vscode/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/vscode/SKILL.md) for patterns including Dev Container configuration, multi-root workspaces, and task definitions for common ML workflows.
+See [`skills/vscode/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/vscode/SKILL.md) for patterns including Dev Container configuration, multi-root workspaces, and task definitions for common ML workflows.

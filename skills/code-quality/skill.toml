@@ -1,0 +1,16 @@
+[skill]
+name = "code-quality"
+version = "1.0.0"
+category = "core"
+tags = ["linting", "formatting", "type-checking", "ruff", "mypy"]
+
+[dependencies]
+requires = []
+recommends = ["pre-commit"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+ruff = ">=0.8"
+mypy = ">=1.11"

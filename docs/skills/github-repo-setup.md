@@ -81,4 +81,4 @@ class RepoConfig(BaseModel):
 
 ## Full Reference
 
-See [`skills/github-repo-setup/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/github-repo-setup/SKILL.md) for the complete setup script, Pydantic models, issue templates, CODEOWNERS patterns, and merge strategy guidance.
+See [`skills/github-repo-setup/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/github-repo-setup/SKILL.md) for the complete setup script, Pydantic models, issue templates, CODEOWNERS patterns, and merge strategy guidance.

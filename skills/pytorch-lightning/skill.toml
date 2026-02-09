@@ -1,0 +1,15 @@
+[skill]
+name = "pytorch-lightning"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["training", "deep-learning", "pytorch", "lightning"]
+
+[dependencies]
+requires = ["pydantic-strict", "loguru"]
+recommends = ["hydra-config", "wandb"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+pytorch-lightning = ">=2.0"

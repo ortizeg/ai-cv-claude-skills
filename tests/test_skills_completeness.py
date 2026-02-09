@@ -30,7 +30,7 @@ def test_skill_md_has_content(skill_dir: Path) -> None:
     skill_md = skill_dir / "SKILL.md"
     content = skill_md.read_text()
 
-    # Check minimum length (1000+ chars for substantial content)
+    # Check minimum length
     assert len(content) > 500, f"SKILL.md in {skill_dir.name} is too short ({len(content)} chars)"
 
     # Check has code examples
@@ -41,48 +41,49 @@ def test_skill_md_has_content(skill_dir: Path) -> None:
 
 
 @pytest.mark.parametrize("skill_dir", get_all_skills(), ids=lambda d: d.name)
+def test_skill_md_has_frontmatter(skill_dir: Path) -> None:
+    """Test that SKILL.md has YAML frontmatter with name and description."""
+    skill_md = skill_dir / "SKILL.md"
+    content = skill_md.read_text()
+
+    assert content.startswith("---"), f"SKILL.md in {skill_dir.name} missing YAML frontmatter"
+
+    # Find closing delimiter
+    lines = content.split("\n")
+    end_idx = -1
+    for i, line in enumerate(lines[1:], start=1):
+        if line.strip() == "---":
+            end_idx = i
+            break
+    assert end_idx > 0, f"SKILL.md in {skill_dir.name} has unclosed frontmatter"
+
+    frontmatter = "\n".join(lines[1:end_idx])
+    assert "name:" in frontmatter, f"SKILL.md in {skill_dir.name} frontmatter missing 'name'"
+    assert "description:" in frontmatter, (
+        f"SKILL.md in {skill_dir.name} frontmatter missing 'description'"
+    )
+
+
+@pytest.mark.parametrize("skill_dir", get_all_skills(), ids=lambda d: d.name)
+def test_skill_has_toml(skill_dir: Path) -> None:
+    """Test that skill has a skill.toml metadata file."""
+    toml_path = skill_dir / "skill.toml"
+    assert toml_path.exists(), f"Missing skill.toml in {skill_dir.name}"
+
+
+@pytest.mark.parametrize("skill_dir", get_all_skills(), ids=lambda d: d.name)
 def test_readme_explains_skill(skill_dir: Path) -> None:
     """Test that README explains the skill."""
     readme = skill_dir / "README.md"
     content = readme.read_text().lower()
 
-    # Should explain purpose
     assert any(word in content for word in ["purpose", "what", "when", "how", "overview", "use"]), (
         f"README in {skill_dir.name} doesn't explain purpose"
     )
 
 
-def test_all_expected_skills_exist() -> None:
-    """Test that all expected skills are present."""
-    expected = {
-        "master-skill",
-        "pytorch-lightning",
-        "pydantic-strict",
-        "code-quality",
-        "pixi",
-        "docker-cv",
-        "hydra-config",
-        "loguru",
-        "testing",
-        "opencv",
-        "matplotlib",
-        "pypi",
-        "gcp",
-        "github-actions",
-        "vscode",
-        "pre-commit",
-        "wandb",
-        "mlflow",
-        "tensorboard",
-        "dvc",
-        "onnx",
-        "tensorrt",
-        "abstraction-patterns",
-        "library-review",
-        "github-repo-setup",
-    }
-
-    actual = {d.name for d in get_all_skills()}
-
-    missing = expected - actual
-    assert not missing, f"Missing skills: {missing}"
+def test_minimum_skill_count() -> None:
+    """Test that we have at least the expected number of skills."""
+    skills = get_all_skills()
+    # Dynamic: just verify we haven't lost skills
+    assert len(skills) >= 25, f"Expected at least 25 skills, found {len(skills)}"

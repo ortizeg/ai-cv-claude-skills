@@ -49,6 +49,16 @@ Skills specific to computer vision workflows.
 | [Matplotlib](matplotlib.md) | Visualization and plotting for CV results | matplotlib |
 | [ONNX](onnx.md) | Model export and optimization | onnx, onnxruntime, onnxslim |
 | [TensorRT](tensorrt.md) | GPU-optimized inference engine building | TensorRT, trtexec |
+| [Hugging Face](huggingface.md) | Pretrained models, fine-tuning, PEFT/LoRA | transformers, datasets, peft |
+
+### Cloud & Deployment
+
+| Skill | Description | Key Libraries |
+|-------|-------------|---------------|
+| [AWS SageMaker](aws-sagemaker.md) | ML training and deployment on AWS | sagemaker, boto3 |
+| [FastAPI](fastapi.md) | ML model serving APIs | FastAPI, uvicorn |
+| [Kubernetes](kubernetes.md) | ML service deployment and orchestration on K8s | kubectl, helm |
+| [Gradio](gradio.md) | Interactive ML model demos and prototypes | Gradio |
 
 ### Infrastructure & DevOps
 
@@ -117,5 +127,5 @@ Each skill is validated by automated tests that check:
 Run the validation suite:
 
 ```bash
-pixi run pytest tests/test_skills_completeness.py -v
+uv run pytest tests/test_skills_completeness.py -v
 ```

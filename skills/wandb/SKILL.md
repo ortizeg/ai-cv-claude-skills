@@ -1,3 +1,11 @@
+---
+name: wandb
+description: >
+  Weights & Biases (W&B) integration for ML experiment tracking and collaboration.
+  Covers metric logging, artifact management, hyperparameter sweeps, model registry,
+  dataset versioning, and opt-in graceful degradation patterns.
+---
+
 # Weights & Biases (W&B) Integration for ML Projects
 
 ## Overview

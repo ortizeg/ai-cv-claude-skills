@@ -1,3 +1,11 @@
+---
+name: matplotlib
+description: >
+  Comprehensive visualization patterns for ML and computer vision using Matplotlib.
+  Covers training curves, confusion matrices, image grids, bounding box overlays,
+  feature maps, publication-quality figures, and experiment tracker integration.
+---
+
 # Matplotlib Skill
 
 Comprehensive visualization patterns for ML and computer vision projects. This skill covers training curves, confusion matrices, image grids, bounding box overlays, feature maps, dimensionality reduction plots, publication-quality figures, and integration with experiment tracking.

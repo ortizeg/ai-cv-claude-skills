@@ -1,0 +1,13 @@
+[skill]
+name = "github-actions"
+version = "1.0.0"
+category = "infra"
+tags = ["ci-cd", "automation", "github", "workflows"]
+
+[dependencies]
+requires = []
+recommends = ["testing", "code-quality", "docker-cv"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

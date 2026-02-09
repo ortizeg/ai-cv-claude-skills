@@ -1,3 +1,11 @@
+---
+name: tensorboard
+description: >
+  TensorBoard visualization and logging for PyTorch ML projects. Covers scalar
+  metrics, image logging, model graph visualization, histogram tracking, profiling,
+  and zero-setup local experiment monitoring.
+---
+
 # TensorBoard Logging for ML Projects
 
 ## Overview

@@ -1,3 +1,11 @@
+---
+name: tensorrt
+description: >
+  Maximize inference performance on NVIDIA GPUs by converting ONNX models to TensorRT
+  engines. Covers precision modes (FP16/INT8), dynamic shapes, engine building,
+  calibration, benchmarking, and Triton Inference Server deployment.
+---
+
 # TensorRT Skill
 
 Maximize inference performance on NVIDIA GPUs by converting ONNX models to TensorRT engines. This skill requires the ONNX skill — always export and slim with ONNX first, then convert to TensorRT.

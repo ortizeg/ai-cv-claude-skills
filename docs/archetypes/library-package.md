@@ -48,13 +48,13 @@ This archetype creates a well-structured Python package that can be published to
 
 ```bash
 # Install in development mode
-pixi run pip install -e ".[dev]"
+uv run pip install -e ".[dev]"
 
 # Run tests
-pixi run test
+uv run test
 
 # Build package
-pixi run python -m build
+uv run python -m build
 
 # Publish to PyPI (via GitHub Actions on tag)
 git tag v0.1.0 && git push --tags

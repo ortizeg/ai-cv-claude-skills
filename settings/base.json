@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)", "Bash(gh *)",
+      "Bash(uv *)", "Bash(uvx *)",
+      "Bash(python *)", "Bash(python3 *)",
+      "Bash(pip *)", "Bash(pip3 *)",
+      "Bash(pytest *)", "Bash(*/pytest *)",
+      "Bash(ruff *)", "Bash(*/ruff *)",
+      "Bash(mypy *)", "Bash(*/mypy *)",
+      "Bash(just *)",
+      "Bash(ls)", "Bash(ls *)",
+      "Bash(pwd)",
+      "Bash(cat *)", "Bash(head *)", "Bash(tail *)",
+      "Bash(wc)", "Bash(wc *)",
+      "Bash(mkdir *)", "Bash(cp *)", "Bash(mv *)", "Bash(rm *)",
+      "Bash(touch *)", "Bash(ln *)", "Bash(chmod *)",
+      "Bash(which)", "Bash(which *)",
+      "Bash(diff *)", "Bash(sort *)", "Bash(uniq *)",
+      "Bash(find *)", "Bash(grep *)",
+      "Bash(echo *)", "Bash(printf *)",
+      "Bash(realpath *)", "Bash(dirname *)", "Bash(basename *)",
+      "Bash(stat *)", "Bash(file *)",
+      "Bash(env *)",
+      "Bash(printenv)", "Bash(printenv *)",
+      "Bash(test *)", "Bash([ *)",
+      "Bash(true)", "Bash(false)"
+    ]
+  }
+}

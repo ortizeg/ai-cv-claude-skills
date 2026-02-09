@@ -1,6 +1,6 @@
 # Creating Projects
 
-This guide walks through creating a new AI/CV project using the ai-cv-claude-skills framework.
+This guide walks through creating a new AI/CV project using the whet framework.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ claude
 ## Step 2: Tell Claude What You Want
 
 ```
-You: "Using ai-cv-claude-skills, create a new pytorch-training-project
+You: "Using whet, create a new pytorch-training-project
       called 'face-detection' for detecting faces in video streams"
 ```
 
@@ -105,11 +105,11 @@ git commit -m "Initial project from pytorch-training-project archetype"
 pixi install
 
 # Install pre-commit hooks
-pixi run pre-commit install
+uv run pre-commit install
 
 # Verify everything works
-pixi run lint
-pixi run test
+uv run lint
+uv run test
 ```
 
 ## Full Example

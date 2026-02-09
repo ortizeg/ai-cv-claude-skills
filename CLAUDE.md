@@ -4,100 +4,137 @@ This file provides context for Claude Code when working in this repository.
 
 ## Project Overview
 
-**AI/CV Claude Skills** is a production-ready skills framework for computer vision and deep learning projects, designed for Claude Code. It provides:
+**whet** — Sharpen your AI coder. A multi-platform CLI tool that installs expert
+skills into AI coding agents (Claude Code, Google Antigravity, Cursor, Copilot).
 
-- **25 Skills** — Best-practice knowledge modules for specific tools and patterns (PyTorch Lightning, Pydantic, Docker, etc.)
-- **4 Agents** — Pre-configured behavioral profiles (Expert Coder, ML Engineer, Code Review, Test Engineer)
-- **6 Archetypes** — Complete project templates for common CV/ML project types
+Ships CV/ML as the flagship skill collection; the framework is domain-agnostic.
+
+Distribution: `uvx whet` (one-shot) / `uv tool install whet` (permanent)
+
+### What whet provides
+
+- **30 Skills** — Best-practice knowledge modules (PyTorch Lightning, Pydantic, Docker, FastAPI, Hugging Face, AWS SageMaker, Gradio, Kubernetes, etc.)
+- **6 Agents** — Pre-configured behavioral profiles (Expert Coder, ML Engineer, DevOps/Infra, Data Engineer, Code Review, Test Engineer)
+- **6+ Archetypes** — Complete project templates for common CV/ML project types
+- **CLI** — `whet add`, `whet install`, `whet list`, `whet search`, `whet doctor`
+- **Multi-platform** — Claude Code, Google Antigravity, Cursor, GitHub Copilot
 
 ### Repository Structure
 
 ```
-ai-cv-claude-skills/
-├── skills/              # 25 individual skill definitions (each has SKILL.md + README.md)
-├── agents/              # 4 agent definitions (each has SKILL.md + README.md + action.yml)
-├── archetypes/          # 6 project templates (each has README.md + template/)
-├── docs/                # MkDocs Material documentation
-├── tests/               # Self-tests validating completeness
-├── .github/workflows/   # CI/CD (test, lint, docs)
-├── pixi.toml            # Development environment and tasks
-├── pyproject.toml       # Tool configuration (ruff, mypy, pytest)
-└── mkdocs.yml           # Documentation site config
+whet/
+├── src/whet/              # Python package (src-layout, Typer CLI)
+│   ├── cli/               # Command modules (install, skills, target, doctor, config)
+│   ├── adapters/           # Platform adapters (claude, antigravity, cursor, copilot)
+│   ├── core/              # Domain models (Pydantic: skill, config)
+│   └── registry/          # Skill discovery, search, dependency resolution
+├── skills/                # 25+ skill definitions (SKILL.md + README.md + skill.toml)
+├── agents/                # 4+ agent definitions (SKILL.md + README.md + agent.toml)
+├── archetypes/            # 6+ project templates (README.md + archetype.toml + template/)
+├── settings/              # Pre-built settings templates (claude.json, etc.)
+├── docs/                  # MkDocs Material documentation
+├── tests/                 # Self-tests (dynamic discovery, no hardcoded counts)
+├── .github/workflows/     # CI/CD (test, lint, docs) — uses uv
+├── pyproject.toml         # uv-managed, publishable to PyPI
+├── justfile               # Task runner (replaces pixi tasks)
+└── mkdocs.yml             # Documentation site config
 ```
 
 ## Development Commands
 
 ```bash
-pixi run test              # Run all tests
-pixi run lint              # Ruff linting
-pixi run typecheck         # MyPy strict type checking
-pixi run ruff format --check .  # Check formatting
-pixi run docs-build        # Build documentation site
-pixi run docs-serve        # Serve docs locally
+just test              # Run all tests
+just lint              # Ruff linting
+just typecheck         # MyPy strict type checking
+just format-check      # Check formatting
+just docs-build        # Build documentation site
+just docs-serve        # Serve docs locally
+just check             # Run all checks (lint + typecheck + test)
+just dev               # Install in development mode
+```
+
+Or directly with uv:
+
+```bash
+uv run pytest tests/ -v
+uv run ruff check .
+uv run mypy src/whet/ tests/ --strict
 ```
 
 ## How to Add a New Skill
 
-1. Create `skills/<name>/SKILL.md` — Must be >500 chars, include code examples (fenced blocks) and headers
-2. Create `skills/<name>/README.md` — Must explain purpose (include words like "when", "use", "purpose")
-3. Create `docs/skills/<name>.md` — Documentation page following existing pattern (Purpose, When to Use, Key Patterns, Anti-Patterns, Combines Well With)
-4. Add `"<name>"` to `tests/test_skills_completeness.py` expected set
-5. Add nav entry to `mkdocs.yml` under Skills section (in appropriate category position)
-6. Add row to `docs/skills/index.md` in the appropriate category table
-7. Update skill counts — see "Files with Hardcoded Counts" below
+1. Create `skills/<name>/SKILL.md` — Must start with YAML frontmatter (`name`, `description`), be >500 chars, include code examples and headers
+2. Create `skills/<name>/skill.toml` — Machine-readable metadata (category, tags, deps, compatibility)
+3. Create `skills/<name>/README.md` — Must explain purpose (include words like "when", "use", "purpose")
+4. Create `docs/skills/<name>.md` — Documentation page (Purpose, When to Use, Key Patterns, Anti-Patterns)
+5. Add nav entry to `mkdocs.yml` under Skills section
+
+Tests discover skills dynamically — no hardcoded lists to update.
 
 ## How to Add a New Agent
 
 1. Create `agents/<name>/SKILL.md` — Must be >500 chars
-2. Create `agents/<name>/README.md` — Agent overview
-3. If blocking agent: create `agents/<name>/action.yml`
-4. Create `docs/agents/<name>.md` — Documentation page
-5. Add `"<name>"` to `tests/test_agents.py` expected set
+2. Create `agents/<name>/agent.toml` — Agent metadata (type: advisory/blocking, tags)
+3. Create `agents/<name>/README.md` — Agent overview
+4. If blocking agent: create `agents/<name>/action.yml`
+5. Create `docs/agents/<name>.md` — Documentation page
 6. Add nav entry to `mkdocs.yml` under Agents section
-7. Update agent counts in README.md and docs/index.md
 
 ## How to Add a New Archetype
 
 1. Create `archetypes/<name>/README.md` — Must be >500 chars, include code blocks
-2. Create `archetypes/<name>/template/` directory with template files
-3. Create `docs/archetypes/<name>.md` — Documentation page
-4. Add `"<name>"` to `tests/test_archetypes.py` expected set
+2. Create `archetypes/<name>/archetype.toml` — Archetype metadata (category, skills)
+3. Create `archetypes/<name>/template/` directory with template files
+4. Create `docs/archetypes/<name>.md` — Documentation page
 5. Add nav entry to `mkdocs.yml` under Archetypes section
-6. Update archetype counts in README.md and docs/index.md
 
-## Files with Hardcoded Counts
+## Skill File Format
 
-These files contain hardcoded skill/agent/archetype counts that **must** be updated when adding or removing skills, agents, or archetypes:
+### SKILL.md (Universal Standard — read by LLMs)
 
-### Skill count (currently 25)
+```yaml
+---
+name: skill-name
+description: >
+  Concise description for LLM discovery.
+---
 
-- `README.md` — lines 13, 64, 71
-- `docs/index.md` — lines 9, 15, 48, 79
+# Skill Title
+(skill content...)
+```
 
-### Agent count (currently 4)
+### skill.toml (Machine-readable metadata — NOT sent to LLMs)
 
-- `README.md` — line 14
-- `docs/index.md` — line 16
+```toml
+[skill]
+name = "skill-name"
+version = "1.0.0"
+category = "cv-ml"  # core | cv-ml | infra | experiment-tracking
+tags = ["tag1", "tag2"]
 
-### Archetype count (currently 6)
+[dependencies]
+requires = ["other-skill"]
+recommends = ["another-skill"]
 
-- `README.md` — line 15
-- `docs/index.md` — line 17
+[compatibility]
+python = ">=3.11"
+libraries = { some-lib = ">=1.0" }
+```
 
 ## Conventions
 
 - **Python 3.11+** — minimum version, use modern syntax (PEP 604 unions, etc.)
 - **Ruff** — linting and formatting (line-length 100, rules: E, F, I, N, UP, S, B, A, C4, T20, SIM)
 - **MyPy strict** — all code must pass `mypy --strict`
-- **Pixi** — dependency and environment management (never use pip directly)
+- **uv** — dependency and environment management
 - **Loguru** — mandatory logging convention across all skills
 - **Pydantic V2** — `BaseModel` for all configs and data structures
-- **src-layout** — mandatory for all project archetypes
+- **src-layout** — mandatory for all project archetypes and the whet package itself
 
 ## CI/CD
 
 Three GitHub Actions workflows, all must pass before merge:
 
-1. **test.yml** — `pixi run test-cov`, `pixi run lint`, `pixi run typecheck`
-2. **lint.yml** — `ruff format --check .`, linting, type checking, YAML validation
+1. **test.yml** — `uv run pytest`, `uv run ruff check`, `uv run mypy --strict`
+2. **lint.yml** — `ruff format --check`, linting, type checking, YAML validation
 3. **docs.yml** — Builds and deploys MkDocs to GitHub Pages (main branch only)

@@ -1,0 +1,13 @@
+[skill]
+name = "abstraction-patterns"
+version = "1.0.0"
+category = "core"
+tags = ["design-patterns", "abc", "protocol", "architecture"]
+
+[dependencies]
+requires = ["pydantic-strict"]
+recommends = ["master-skill"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

@@ -106,4 +106,4 @@ def plot_image_grid(
 
 ## Full Reference
 
-See [`skills/matplotlib/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/matplotlib/SKILL.md) for patterns including confusion matrix heatmaps, ROC curves, t-SNE embeddings, and animated training progress.
+See [`skills/matplotlib/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/matplotlib/SKILL.md) for patterns including confusion matrix heatmaps, ROC curves, t-SNE embeddings, and animated training progress.

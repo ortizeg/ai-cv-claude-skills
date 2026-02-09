@@ -1,0 +1,13 @@
+[skill]
+name = "kubernetes"
+version = "1.0.0"
+category = "infra"
+tags = ["kubernetes", "k8s", "deployment", "orchestration", "helm"]
+
+[dependencies]
+requires = ["docker-cv"]
+recommends = ["fastapi", "gcp", "aws-sagemaker"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

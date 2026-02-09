@@ -74,13 +74,13 @@ __version__ = "0.1.0"
 
 ```bash
 # Build the package
-pixi run python -m build
+uv run python -m build
 
 # Check the distribution
-pixi run twine check dist/*
+uv run twine check dist/*
 
 # Publish to PyPI
-pixi run twine upload dist/*
+uv run twine upload dist/*
 ```
 
 ### Semantic Release Configuration
@@ -119,4 +119,4 @@ prerelease_token = "dev"
 
 ## Full Reference
 
-See [`skills/pypi/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/pypi/SKILL.md) for patterns including namespace packages, C extension builds for CV operations, and TestPyPI workflows.
+See [`skills/pypi/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/pypi/SKILL.md) for patterns including namespace packages, C extension builds for CV operations, and TestPyPI workflows.

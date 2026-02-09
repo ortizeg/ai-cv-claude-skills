@@ -52,13 +52,13 @@ This archetype provides a complete training pipeline structure for computer visi
 
 ```bash
 # Train with default config
-pixi run python -m my_project.train
+uv run python -m my_project.train
 
 # Override parameters
-pixi run python -m my_project.train model=efficientnet trainer.max_epochs=50
+uv run python -m my_project.train model=efficientnet trainer.max_epochs=50
 
 # Debug mode (1 batch, no logging)
-pixi run python -m my_project.train trainer=debug
+uv run python -m my_project.train trainer=debug
 ```
 
 ## Customization

@@ -1,0 +1,16 @@
+[skill]
+name = "onnx"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["model-export", "inference", "onnx", "optimization"]
+
+[dependencies]
+requires = ["loguru"]
+recommends = ["tensorrt", "pytorch-lightning"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+onnx = ">=1.15"
+onnxruntime = ">=1.17"

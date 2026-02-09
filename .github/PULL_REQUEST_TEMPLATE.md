@@ -5,11 +5,11 @@
 -
 
 ## Test Plan
-- [ ] `pixi run test` passes
-- [ ] `pixi run lint` passes
-- [ ] `pixi run typecheck` passes
-- [ ] `pixi run docs-build` succeeds
+- [ ] `just test` passes
+- [ ] `just lint` passes
+- [ ] `just typecheck` passes
+- [ ] `just docs-build` succeeds
 
 ## Checklist
-- [ ] Skill counts updated in README.md and docs/index.md (if adding/removing skills)
 - [ ] CLAUDE.md reviewed (if changing repo structure)
+- [ ] New skills have YAML frontmatter and skill.toml

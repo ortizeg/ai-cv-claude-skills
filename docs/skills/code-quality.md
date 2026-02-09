@@ -68,13 +68,13 @@ ignore_missing_imports = true
 
 ```bash
 # Format code
-pixi run ruff format src/ tests/
+uv run ruff format src/ tests/
 
 # Lint with auto-fix
-pixi run ruff check --fix src/ tests/
+uv run ruff check --fix src/ tests/
 
 # Type check
-pixi run mypy src/
+uv run mypy src/
 ```
 
 ## Anti-Patterns to Avoid
@@ -93,4 +93,4 @@ pixi run mypy src/
 
 ## Full Reference
 
-See [`skills/code-quality/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/code-quality/SKILL.md) for the full configuration including per-file rule overrides, custom ruff rules for ML patterns, and mypy plugin configuration for PyTorch and Pydantic.
+See [`skills/code-quality/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/code-quality/SKILL.md) for the full configuration including per-file rule overrides, custom ruff rules for ML patterns, and mypy plugin configuration for PyTorch and Pydantic.

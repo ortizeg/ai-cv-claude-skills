@@ -106,4 +106,4 @@ parameters:
 
 ## Full Reference
 
-See [`skills/wandb/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/wandb/SKILL.md) for patterns including custom W&B Tables for dataset visualization, model registry integration, and alert configuration for metric thresholds.
+See [`skills/wandb/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/wandb/SKILL.md) for patterns including custom W&B Tables for dataset visualization, model registry integration, and alert configuration for metric thresholds.

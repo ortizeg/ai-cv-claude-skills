@@ -1,0 +1,10 @@
+[archetype]
+name = "research-notebook"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["research", "jupyter", "experimentation", "prototyping"]
+description = "Jupyter-based experimentation environment for ML research"
+
+[skills]
+required = ["pytorch-lightning", "matplotlib", "loguru"]
+recommended = ["hydra-config", "wandb", "opencv"]

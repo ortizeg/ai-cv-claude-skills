@@ -1,3 +1,11 @@
+---
+name: github-actions
+description: >
+  CI/CD workflow patterns for ML/CV projects using GitHub Actions. Covers tiered
+  pipelines (lint, test, build, deploy), GPU runner support, dependency caching,
+  matrix builds, and AI agent integration.
+---
+
 # GitHub Actions Skill
 
 CI/CD workflow patterns for ML/CV projects with tiered pipelines, GPU runner support, caching, and AI agent integration.

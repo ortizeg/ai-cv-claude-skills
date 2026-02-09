@@ -1,0 +1,17 @@
+[skill]
+name = "huggingface"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["transformers", "datasets", "fine-tuning", "pretrained", "nlp", "vision"]
+
+[dependencies]
+requires = ["pydantic-strict", "loguru"]
+recommends = ["pytorch-lightning", "wandb", "onnx", "fastapi"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+transformers = ">=4.35"
+datasets = ">=2.14"
+peft = ">=0.6"

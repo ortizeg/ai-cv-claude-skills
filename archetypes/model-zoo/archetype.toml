@@ -1,0 +1,10 @@
+[archetype]
+name = "model-zoo"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["models", "pretrained", "collection", "benchmarks"]
+description = "Collection of pretrained models with benchmarking and evaluation"
+
+[skills]
+required = ["pytorch-lightning", "onnx", "pydantic-strict", "loguru", "testing"]
+recommended = ["dvc", "wandb", "docker-cv"]

@@ -101,4 +101,4 @@ class PredictionResponse(BaseModel, strict=True):
 
 ## Full Reference
 
-See [`skills/pydantic-strict/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/pydantic-strict/SKILL.md) for patterns covering custom validators, serialization, and Pydantic settings for environment variable loading.
+See [`skills/pydantic-strict/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/pydantic-strict/SKILL.md) for patterns covering custom validators, serialization, and Pydantic settings for environment variable loading.

@@ -37,22 +37,22 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.8.1
         with:
           pixi-version: v0.30.0
-      - run: pixi run ruff check src/ tests/
-      - run: pixi run ruff format --check src/ tests/
+      - run: uv run ruff check src/ tests/
+      - run: uv run ruff format --check src/ tests/
 
   typecheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: prefix-dev/setup-pixi@v0.8.1
-      - run: pixi run mypy src/
+      - run: uv run mypy src/
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: prefix-dev/setup-pixi@v0.8.1
-      - run: pixi run pytest tests/ -v --tb=short
+      - run: uv run pytest tests/ -v --tb=short
 ```
 
 ### Docker Build and Push
@@ -123,4 +123,4 @@ release:
 
 ## Full Reference
 
-See [`skills/github-actions/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/github-actions/SKILL.md) for patterns including GPU-enabled runners, model artifact caching, and matrix builds across Python versions.
+See [`skills/github-actions/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/github-actions/SKILL.md) for patterns including GPU-enabled runners, model artifact caching, and matrix builds across Python versions.

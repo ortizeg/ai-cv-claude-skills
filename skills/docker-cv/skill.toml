@@ -1,0 +1,13 @@
+[skill]
+name = "docker-cv"
+version = "1.0.0"
+category = "infra"
+tags = ["docker", "containerization", "cuda", "deployment"]
+
+[dependencies]
+requires = []
+recommends = ["pixi", "github-actions"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

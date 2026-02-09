@@ -1,3 +1,11 @@
+---
+name: hydra-config
+description: >
+  Manage complex hierarchical configurations for ML experiments using Hydra.
+  Covers structured configs, config composition, command-line overrides, multi-run
+  sweeps, config groups, and Pydantic validation integration.
+---
+
 # Hydra Configuration Skill
 
 Use Hydra for managing complex, hierarchical configurations in machine learning and computer vision projects. This skill covers structured configs, config composition, command-line overrides, multi-run sweeps, and integration with Pydantic validation.

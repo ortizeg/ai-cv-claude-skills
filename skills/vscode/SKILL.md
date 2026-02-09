@@ -1,3 +1,11 @@
+---
+name: vscode
+description: >
+  Configure VS Code for productive computer vision and ML development. Covers
+  workspace settings, Ruff and MyPy integration, Python debugging configurations,
+  remote SSH GPU server setup, and recommended extensions.
+---
+
 # VS Code Skill
 
 Configure VS Code for productive computer vision and machine learning development with integrated linting, debugging, and remote GPU server support.

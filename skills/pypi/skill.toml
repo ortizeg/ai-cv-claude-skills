@@ -1,0 +1,13 @@
+[skill]
+name = "pypi"
+version = "1.0.0"
+category = "infra"
+tags = ["packaging", "publishing", "pypi", "distribution"]
+
+[dependencies]
+requires = ["code-quality"]
+recommends = ["github-actions"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

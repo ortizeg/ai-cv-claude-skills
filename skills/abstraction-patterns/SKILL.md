@@ -1,3 +1,11 @@
+---
+name: abstraction-patterns
+description: >
+  Teaches when and how to create well-designed abstractions in AI/CV Python projects.
+  Covers the Rule of Three, interface design, wrapper patterns, and anti-patterns
+  for reducing cognitive load without over-engineering.
+---
+
 # Abstraction Patterns Skill
 
 You are writing well-abstracted Python code for AI/CV projects. Follow these patterns exactly.

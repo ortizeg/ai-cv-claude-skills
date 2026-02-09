@@ -1,0 +1,16 @@
+[skill]
+name = "aws-sagemaker"
+version = "1.0.0"
+category = "cloud"
+tags = ["aws", "sagemaker", "training", "deployment", "cloud", "mlops"]
+
+[dependencies]
+requires = ["pydantic-strict", "loguru"]
+recommends = ["pytorch-lightning", "docker-cv", "wandb", "dvc"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+sagemaker = ">=2.200"
+boto3 = ">=1.28"

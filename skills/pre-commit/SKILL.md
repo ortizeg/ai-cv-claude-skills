@@ -1,3 +1,11 @@
+---
+name: pre-commit
+description: >
+  Configure pre-commit hooks for Python and ML projects to enforce code quality
+  at commit time. Covers Ruff, MyPy, YAML validation, large file prevention,
+  secret detection, and CI integration with pre-commit.ci.
+---
+
 # Pre-commit Hooks for Python and ML Projects
 
 ## Overview

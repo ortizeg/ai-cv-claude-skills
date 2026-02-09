@@ -1,0 +1,16 @@
+[skill]
+name = "testing"
+version = "1.0.0"
+category = "core"
+tags = ["testing", "pytest", "coverage", "tdd"]
+
+[dependencies]
+requires = ["pydantic-strict"]
+recommends = ["code-quality"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+pytest = ">=7.4"
+pytest-cov = ">=4.1"

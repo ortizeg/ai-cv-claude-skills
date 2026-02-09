@@ -65,10 +65,10 @@ class Stage(ABC):
 
 ```bash
 # Run full pipeline
-pixi run python -m my_project.pipeline
+uv run python -m my_project.pipeline
 
 # Run single stage
-pixi run python -m my_project.pipeline stage=preprocess
+uv run python -m my_project.pipeline stage=preprocess
 
 # Reproduce with DVC
 dvc repro

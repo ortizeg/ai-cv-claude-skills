@@ -1,0 +1,13 @@
+[skill]
+name = "github-repo-setup"
+version = "1.0.0"
+category = "infra"
+tags = ["repository", "github", "setup", "initialization"]
+
+[dependencies]
+requires = []
+recommends = ["github-actions", "pre-commit"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

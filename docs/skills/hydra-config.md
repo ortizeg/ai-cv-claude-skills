@@ -111,4 +111,4 @@ if __name__ == "__main__":
 
 ## Full Reference
 
-See [`skills/hydra-config/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/hydra-config/SKILL.md) for patterns including multi-run sweeps, Hydra callbacks, and integration with Optuna for hyperparameter optimization.
+See [`skills/hydra-config/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/hydra-config/SKILL.md) for patterns including multi-run sweeps, Hydra callbacks, and integration with Optuna for hyperparameter optimization.

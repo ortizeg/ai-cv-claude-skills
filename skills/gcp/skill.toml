@@ -1,0 +1,16 @@
+[skill]
+name = "gcp"
+version = "1.0.0"
+category = "infra"
+tags = ["cloud", "gcp", "vertex-ai", "gcs", "deployment"]
+
+[dependencies]
+requires = ["docker-cv"]
+recommends = ["github-actions"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+google-cloud-storage = ">=2.0"
+google-cloud-aiplatform = ">=1.30"
