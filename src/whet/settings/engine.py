@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -20,12 +21,26 @@ def load_template(template_path: Path) -> SettingsTemplate:
     return SettingsTemplate(**raw)
 
 
-def load_existing(settings_path: Path) -> SettingsTemplate | None:
-    """Load existing settings file, or None if not found."""
+def load_existing_raw(settings_path: Path) -> dict[str, Any] | None:
+    """Load existing settings file as raw dict, or None if not found."""
     if not settings_path.exists():
         return None
-    raw = json.loads(settings_path.read_text())
-    return SettingsTemplate(**raw)
+    return json.loads(settings_path.read_text())  # type: ignore[no-any-return]
+
+
+def load_existing(settings_path: Path) -> SettingsTemplate | None:
+    """Load existing settings file as SettingsTemplate, or None if not found.
+
+    Only extracts the permissions.allow list; ignores other keys.
+    """
+    raw = load_existing_raw(settings_path)
+    if raw is None:
+        return None
+    perms = raw.get("permissions", {})
+    allow = perms.get("allow", [])
+    if not isinstance(allow, list):
+        allow = []
+    return SettingsTemplate(permissions={"allow": allow})
 
 
 def merge_settings(
@@ -65,12 +80,24 @@ def diff_settings(
 
 
 def write_settings(settings_path: Path, template: SettingsTemplate) -> None:
-    """Write settings to disk as formatted JSON."""
+    """Write settings to disk, preserving existing non-permission keys."""
     settings_path.parent.mkdir(parents=True, exist_ok=True)
-    content = json.dumps(
-        {"permissions": template.permissions},
-        indent=2,
-    )
+
+    # Load existing file to preserve keys we don't manage (hooks, statusLine, etc.)
+    existing_raw: dict[str, Any] = {}
+    if settings_path.exists():
+        existing_raw = json.loads(settings_path.read_text())
+
+    # Merge: keep all existing keys, update permissions.allow
+    existing_perms = existing_raw.get("permissions", {})
+    if isinstance(existing_perms, dict):
+        existing_perms["allow"] = template.permissions.get("allow", [])
+    else:
+        existing_perms = template.permissions
+
+    existing_raw["permissions"] = existing_perms
+
+    content = json.dumps(existing_raw, indent=2)
     settings_path.write_text(content + "\n")
 
 
