@@ -115,7 +115,7 @@ def _apply_settings(platform: str, scope: str) -> None:
 
 
 def _get_config() -> WhetConfig:
-    return WhetConfig()
+    return WhetConfig.load()
 
 
 def _get_adapter(platform: Platform) -> PlatformAdapter:

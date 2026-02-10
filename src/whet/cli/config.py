@@ -6,7 +6,7 @@ import typer
 from rich.console import Console
 
 from whet.cli import app
-from whet.core.config import Platform
+from whet.core.config import Platform, WhetConfig
 
 console = Console()
 
@@ -21,9 +21,7 @@ def config(
     Without arguments, shows all configuration.
     With a key, shows that value. With key and value, sets it.
     """
-    from whet.core.config import WhetConfig
-
-    cfg = WhetConfig()
+    cfg = WhetConfig.load()
 
     if key is None:
         console.print("[bold]whet configuration[/bold]\n")
@@ -41,6 +39,8 @@ def config(
                 valid = ", ".join(p.value for p in Platform)
                 console.print(f"[red]Invalid platform '{value}'. Valid: {valid}[/red]")
                 raise typer.Exit(code=1) from err
+            cfg = cfg.model_copy(update={"target": platform})
+            cfg.save()
             console.print(f"[green]✓[/green] target = {platform.value}")
         else:
             console.print(f"target = {cfg.target.value}")
