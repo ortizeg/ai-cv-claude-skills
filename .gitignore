@@ -14,6 +14,10 @@ venv/
 env/
 .pixi/
 
+# Ruff / mypy caches
+.ruff_cache/
+.mypy_cache/
+
 # IDE
 .vscode/
 .idea/
