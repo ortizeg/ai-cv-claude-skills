@@ -2,11 +2,17 @@
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 import pytest
 
 AGENTS_DIR = Path("agents")
+
+if sys.version_info >= (3, 12):
+    import tomllib
+else:
+    import tomli as tomllib
 
 
 def get_all_agents() -> list[Path]:
@@ -29,20 +35,28 @@ def test_agent_has_readme(agent_dir: Path) -> None:
     assert readme.exists(), f"Missing README.md in {agent_dir.name}"
 
 
+@pytest.mark.parametrize("agent_dir", get_all_agents(), ids=lambda d: d.name)
+def test_agent_has_toml(agent_dir: Path) -> None:
+    """Test agent has agent.toml metadata file."""
+    toml_path = agent_dir / "agent.toml"
+    assert toml_path.exists(), f"Missing agent.toml in {agent_dir.name}"
+
+
 def test_blocking_agents_have_actions() -> None:
     """Test that blocking agents have GitHub Actions."""
-    blocking_agents = ["code-review", "test-engineer"]
+    for agent_dir in get_all_agents():
+        toml_path = agent_dir / "agent.toml"
+        if toml_path.exists():
+            with open(toml_path, "rb") as f:
+                data = tomllib.load(f)
+            if data.get("agent", {}).get("type") == "blocking":
+                action_yml = agent_dir / "action.yml"
+                assert action_yml.exists(), (
+                    f"Missing action.yml for blocking agent {agent_dir.name}"
+                )
 
-    for agent_name in blocking_agents:
-        agent_dir = AGENTS_DIR / agent_name
-        action_yml = agent_dir / "action.yml"
-        assert action_yml.exists(), f"Missing action.yml for blocking agent {agent_name}"
 
-
-def test_all_expected_agents_exist() -> None:
-    """Test all expected agents exist."""
-    expected = {"expert-coder", "ml-engineer", "code-review", "test-engineer"}
-    actual = {d.name for d in get_all_agents()}
-
-    missing = expected - actual
-    assert not missing, f"Missing agents: {missing}"
+def test_minimum_agent_count() -> None:
+    """Test that we have at least the expected number of agents."""
+    agents = get_all_agents()
+    assert len(agents) >= 4, f"Expected at least 4 agents, found {len(agents)}"

@@ -90,23 +90,23 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.8.1
         with:
           pixi-version: latest
-      - run: pixi run pytest --cov=src --cov-fail-under=80
+      - run: uv run pytest --cov=src --cov-fail-under=80
 ```
 
 ## Local Usage
 
 ```bash
 # Run all tests
-pixi run test
+uv run test
 
 # Run with coverage report
-pixi run test-cov
+uv run test-cov
 
 # Run specific test file
-pixi run pytest tests/unit/test_models.py -v
+uv run pytest tests/unit/test_models.py -v
 
 # Run tests matching pattern
-pixi run pytest -k "test_model"
+uv run pytest -k "test_model"
 ```
 
 ## Additional Requirements

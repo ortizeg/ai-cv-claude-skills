@@ -112,4 +112,4 @@ class ImageDataModule(L.LightningDataModule):
 
 ## Full Reference
 
-See [`skills/pytorch-lightning/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/pytorch-lightning/SKILL.md) for complete patterns including custom callbacks, profiling, and advanced distributed training configuration.
+See [`skills/pytorch-lightning/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/pytorch-lightning/SKILL.md) for complete patterns including custom callbacks, profiling, and advanced distributed training configuration.

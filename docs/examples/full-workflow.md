@@ -192,13 +192,13 @@ dropout: 0.1
 
 ```bash
 # Default training
-pixi run python -m yolo_detector.train
+uv run python -m yolo_detector.train
 
 # Override config
-pixi run python -m yolo_detector.train model.backbone=efficientnet_b0 trainer.max_epochs=50
+uv run python -m yolo_detector.train model.backbone=efficientnet_b0 trainer.max_epochs=50
 
 # Debug mode
-pixi run python -m yolo_detector.train trainer.fast_dev_run=true
+uv run python -m yolo_detector.train trainer.fast_dev_run=true
 ```
 
 ## Step 7: Export to ONNX

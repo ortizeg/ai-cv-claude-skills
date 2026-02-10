@@ -1,3 +1,11 @@
+---
+name: onnx
+description: >
+  Export PyTorch models to ONNX format for optimized inference with ONNX Runtime.
+  Covers dynamic axes configuration, model optimization, graph surgery, validation
+  against PyTorch outputs, and production deployment patterns.
+---
+
 # ONNX Model Export and Inference
 
 ## Overview

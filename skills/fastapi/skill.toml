@@ -1,0 +1,17 @@
+[skill]
+name = "fastapi"
+version = "1.0.0"
+category = "infra"
+tags = ["api", "serving", "fastapi", "rest", "async"]
+
+[dependencies]
+requires = ["pydantic-strict", "loguru"]
+recommends = ["docker-cv", "onnx", "testing"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+fastapi = ">=0.100"
+uvicorn = ">=0.20"
+httpx = ">=0.24"

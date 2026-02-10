@@ -1,0 +1,13 @@
+[skill]
+name = "pre-commit"
+version = "1.0.0"
+category = "infra"
+tags = ["git-hooks", "automation", "pre-commit", "code-quality"]
+
+[dependencies]
+requires = ["code-quality"]
+recommends = ["testing"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

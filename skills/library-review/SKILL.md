@@ -1,3 +1,11 @@
+---
+name: library-review
+description: >
+  Structured framework for evaluating third-party Python libraries before adoption.
+  Covers technology radar classification (Adopt/Trial/Assess/Hold), dependency risk
+  assessment, API wrapping strategies, and security review checklists.
+---
+
 # Library Review and Evaluation Framework
 
 ## Overview

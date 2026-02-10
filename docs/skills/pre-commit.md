@@ -62,10 +62,10 @@ repos:
 pixi add pre-commit
 
 # Install hooks
-pixi run pre-commit install
+uv run pre-commit install
 
 # Run on all files (first time or CI)
-pixi run pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 ## Anti-Patterns to Avoid
@@ -84,4 +84,4 @@ pixi run pre-commit run --all-files
 
 ## Full Reference
 
-See [`skills/pre-commit/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/pre-commit/SKILL.md) for patterns including custom local hooks for ML-specific validation, commit message linting, and DVC file validation hooks.
+See [`skills/pre-commit/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/pre-commit/SKILL.md) for patterns including custom local hooks for ML-specific validation, commit message linting, and DVC file validation hooks.

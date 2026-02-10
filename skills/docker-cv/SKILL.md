@@ -1,3 +1,11 @@
+---
+name: docker-cv
+description: >
+  Build optimized Docker images for computer vision and deep learning workloads.
+  Covers CUDA support, multi-stage builds, layer caching, security best practices,
+  and GPU-accelerated container deployment.
+---
+
 # Docker CV Skill
 
 Build optimized Docker images for computer vision and deep learning workloads with CUDA support, multi-stage builds, and security best practices.

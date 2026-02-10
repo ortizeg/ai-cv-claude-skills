@@ -1,0 +1,10 @@
+[archetype]
+name = "pytorch-training-project"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["training", "pytorch", "lightning", "deep-learning"]
+description = "Model training with PyTorch Lightning, Hydra config, and experiment tracking"
+
+[skills]
+required = ["pytorch-lightning", "hydra-config", "pydantic-strict", "loguru", "testing"]
+recommended = ["wandb", "docker-cv", "github-actions"]

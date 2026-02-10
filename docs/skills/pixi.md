@@ -89,4 +89,4 @@ export = { cmd = "python scripts/export_onnx.py", depends-on = ["train"] }
 
 ## Full Reference
 
-See [`skills/pixi/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/pixi/SKILL.md) for advanced patterns including multi-platform builds, workspace configurations, and integration with conda-forge for system-level CV libraries.
+See [`skills/pixi/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/pixi/SKILL.md) for advanced patterns including multi-platform builds, workspace configurations, and integration with conda-forge for system-level CV libraries.

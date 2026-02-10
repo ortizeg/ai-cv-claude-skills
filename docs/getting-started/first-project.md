@@ -190,13 +190,13 @@ object-detector/
 
 ```bash
 # Local training
-pixi run python src/object_detector/train.py experiment=small
+uv run python src/object_detector/train.py experiment=small
 
 # Docker training
 docker compose up train
 
 # Multi-GPU training
-pixi run python src/object_detector/train.py trainer.devices=4 trainer.strategy=ddp
+uv run python src/object_detector/train.py trainer.devices=4 trainer.strategy=ddp
 ```
 
 ## Key Takeaways

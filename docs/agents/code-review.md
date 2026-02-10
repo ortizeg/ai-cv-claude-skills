@@ -33,9 +33,9 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.8.1
         with:
           pixi-version: latest
-      - run: pixi run ruff format --check .
-      - run: pixi run ruff check .
-      - run: pixi run mypy src/
+      - run: uv run ruff format --check .
+      - run: uv run ruff check .
+      - run: uv run mypy src/
 ```
 
 ## Local Development
@@ -44,13 +44,13 @@ Run checks locally before pushing to avoid CI failures:
 
 ```bash
 # Run all checks
-pixi run lint
+uv run lint
 
 # Auto-fix formatting
-pixi run format
+uv run format
 
 # Type check
-pixi run typecheck
+uv run typecheck
 ```
 
 ## Pre-commit Integration
@@ -68,7 +68,7 @@ Ruff lint................................Passed
 | Failure | Fix |
 |---------|-----|
 | `F401: imported but unused` | Remove unused import |
-| `I001: import not sorted` | Run `pixi run format` |
+| `I001: import not sorted` | Run `uv run format` |
 | `S101: assert used` | Only use assert in test files |
 | `T201: print found` | Use `logging` instead of `print` |
 | `mypy: Missing type hints` | Add type annotations to all functions |

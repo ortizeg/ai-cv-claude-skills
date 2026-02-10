@@ -89,4 +89,4 @@ with profile(
 
 ## Full Reference
 
-See [`skills/tensorboard/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/tensorboard/SKILL.md) for patterns including embedding visualization, custom scalar plugins, and multi-run comparison layouts.
+See [`skills/tensorboard/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/tensorboard/SKILL.md) for patterns including embedding visualization, custom scalar plugins, and multi-run comparison layouts.

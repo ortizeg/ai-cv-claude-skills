@@ -125,4 +125,4 @@ class FocalLoss(DetectionLoss):
 
 ## Full Reference
 
-See [`skills/abstraction-patterns/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/abstraction-patterns/SKILL.md) for patterns including factory methods, builder patterns for complex pipelines, and mixin classes for common ML functionality.
+See [`skills/abstraction-patterns/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/abstraction-patterns/SKILL.md) for patterns including factory methods, builder patterns for complex pipelines, and mixin classes for common ML functionality.

@@ -1,3 +1,11 @@
+---
+name: opencv
+description: >
+  Type-safe OpenCV abstractions for computer vision projects. Covers video I/O,
+  image processing wrappers, drawing utilities, color space conversions, camera
+  capture, and clean API design over OpenCV's C-style interface.
+---
+
 # OpenCV Skill
 
 Comprehensive OpenCV abstractions for computer vision projects. This skill provides clean, type-safe wrappers around OpenCV's C-style API, covering video reading/writing, image abstractions, drawing utilities, color space conversions, and camera capture.

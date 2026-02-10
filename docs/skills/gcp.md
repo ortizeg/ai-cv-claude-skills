@@ -85,4 +85,4 @@ class VertexJobConfig(BaseModel, frozen=True):
 
 ## Full Reference
 
-See [`skills/gcp/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/gcp/SKILL.md) for Artifact Registry setup, Cloud Storage patterns, Vertex AI GPU reference, authentication flows, Pydantic config models, and pixi task definitions.
+See [`skills/gcp/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/gcp/SKILL.md) for Artifact Registry setup, Cloud Storage patterns, Vertex AI GPU reference, authentication flows, Pydantic config models, and pixi task definitions.

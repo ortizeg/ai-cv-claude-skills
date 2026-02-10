@@ -1,0 +1,15 @@
+[skill]
+name = "matplotlib"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["visualization", "plotting", "charts", "figures"]
+
+[dependencies]
+requires = []
+recommends = ["opencv"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+matplotlib = ">=3.8"

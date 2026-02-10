@@ -1,0 +1,10 @@
+[archetype]
+name = "cv-inference-service"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["inference", "deployment", "fastapi", "onnx"]
+description = "FastAPI + ONNX deployment service for computer vision models"
+
+[skills]
+required = ["onnx", "pydantic-strict", "loguru", "docker-cv", "testing"]
+recommended = ["tensorrt", "gcp", "github-actions"]

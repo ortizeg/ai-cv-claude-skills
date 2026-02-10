@@ -75,4 +75,4 @@ logging.basicConfig(handlers=[InterceptHandler()], level=0, force=True)
 
 ## Full Reference
 
-See [`skills/loguru/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/loguru/SKILL.md) for complete patterns including custom ML log levels, JSON serialization, Pydantic configuration, and exception handling decorators.
+See [`skills/loguru/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/loguru/SKILL.md) for complete patterns including custom ML log levels, JSON serialization, Pydantic configuration, and exception handling decorators.

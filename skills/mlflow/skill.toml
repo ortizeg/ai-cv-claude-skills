@@ -1,0 +1,15 @@
+[skill]
+name = "mlflow"
+version = "1.0.0"
+category = "experiment-tracking"
+tags = ["experiment-tracking", "model-registry", "mlflow", "deployment"]
+
+[dependencies]
+requires = ["loguru"]
+recommends = ["pytorch-lightning"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+mlflow = ">=2.10"

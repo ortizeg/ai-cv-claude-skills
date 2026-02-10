@@ -1,6 +1,6 @@
 # Customization
 
-This guide covers how to adapt the ai-cv-claude-skills framework to your specific needs.
+This guide covers how to adapt the whet framework to your specific needs.
 
 ## Overriding Default Configurations
 

@@ -1,0 +1,15 @@
+[skill]
+name = "hydra-config"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["configuration", "hydra", "omegaconf", "experiment-management"]
+
+[dependencies]
+requires = ["pydantic-strict"]
+recommends = ["pytorch-lightning"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+hydra-core = ">=1.3"

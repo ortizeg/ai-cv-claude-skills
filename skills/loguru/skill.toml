@@ -1,0 +1,15 @@
+[skill]
+name = "loguru"
+version = "1.0.0"
+category = "core"
+tags = ["logging", "structured-logging", "observability"]
+
+[dependencies]
+requires = []
+recommends = ["master-skill"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+loguru = ">=0.7"

@@ -99,4 +99,4 @@ dvc pull
 
 ## Full Reference
 
-See [`skills/dvc/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/dvc/SKILL.md) for patterns including DVC experiments, metrics comparison across branches, and integration with cloud storage providers.
+See [`skills/dvc/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/dvc/SKILL.md) for patterns including DVC experiments, metrics comparison across branches, and integration with cloud storage providers.

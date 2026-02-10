@@ -10,21 +10,23 @@ Browse the [Skills Overview](../skills/index.md) to find skills relevant to your
 - **Hydra Config** -- Configuration management
 - **Code Quality** -- Linting, formatting, type checking
 
-## Step 2: Start Claude Code with Skills
+## Step 2: Install Skills
 
-Open your terminal in the project directory where you want to generate code:
+Install the skills you need into your project:
 
 ```bash
 mkdir my-classifier && cd my-classifier
+
+# Install skills with whet
+whet add pytorch-lightning hydra-config code-quality
 ```
 
-Start Claude Code and reference the skills:
+Start Claude Code — the skills are automatically discovered:
 
 ```bash
-claude "You are an ML engineer. Use the pytorch-lightning, hydra-config, and
-       code-quality skills from ai-cv-claude-skills to create a ResNet image
-       classifier training pipeline. Include data loading, augmentations,
-       training configuration, and evaluation."
+claude "Create a ResNet image classifier training pipeline.
+       Include data loading, augmentations, training configuration,
+       and evaluation."
 ```
 
 ## Step 3: Review the Generated Structure
@@ -52,7 +54,7 @@ my-classifier/
         test_model.py
         test_data.py
     pyproject.toml
-    pixi.toml
+    pyproject.toml
 ```
 
 ## Step 4: Configure and Train
@@ -72,7 +74,7 @@ data:
 Run training:
 
 ```bash
-pixi run python src/my_classifier/train.py data=custom trainer.max_epochs=50
+uv run python src/my_classifier/train.py data=custom trainer.max_epochs=50
 ```
 
 ## Step 5: Add More Skills
@@ -81,17 +83,19 @@ As your project grows, layer on additional skills:
 
 ```bash
 # Add experiment tracking
-claude "Add Weights & Biases integration to this project using the wandb skill.
-       Log metrics, hyperparameters, and model checkpoints."
+whet add wandb
 
 # Add Docker support
-claude "Containerize this project for GPU training using the docker-cv skill.
-       Include multi-stage build and CUDA support."
+whet add docker-cv
+
+# Add model serving
+whet add fastapi
 
 # Add CI/CD
-claude "Set up GitHub Actions for this project using the github-actions skill.
-       Include linting, testing, and model training validation."
+whet add github-actions
 ```
+
+Each skill is automatically discovered by Claude Code and used to guide code generation.
 
 ## Common Skill Combinations
 
@@ -104,7 +108,7 @@ pytorch-lightning + hydra-config + wandb + code-quality + testing
 
 ### Inference Service
 ```
-docker-cv + onnx + pydantic-strict + code-quality + testing
+fastapi + onnx + docker-cv + pydantic-strict + code-quality + testing
 ```
 
 ### Research Project

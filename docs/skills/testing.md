@@ -104,4 +104,4 @@ filterwarnings = ["ignore::DeprecationWarning"]
 
 ## Full Reference
 
-See [`skills/testing/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/testing/SKILL.md) for advanced patterns including GPU-conditional tests, snapshot testing for model outputs, and property-based testing with Hypothesis.
+See [`skills/testing/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/testing/SKILL.md) for advanced patterns including GPU-conditional tests, snapshot testing for model outputs, and property-based testing with Hypothesis.

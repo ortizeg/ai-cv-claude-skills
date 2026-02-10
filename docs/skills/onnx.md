@@ -118,4 +118,4 @@ onnx.save(slimmed, "model.onnx")
 
 ## Full Reference
 
-See [`skills/onnx/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/onnx/SKILL.md) for patterns including TensorRT optimization, quantization, model surgery, and batched inference with dynamic shapes.
+See [`skills/onnx/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/onnx/SKILL.md) for patterns including TensorRT optimization, quantization, model surgery, and batched inference with dynamic shapes.

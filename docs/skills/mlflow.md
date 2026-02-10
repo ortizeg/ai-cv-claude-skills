@@ -93,4 +93,4 @@ with mlflow.start_run(run_name="resnet50-baseline") as run:
 
 ## Full Reference
 
-See [`skills/mlflow/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/mlflow/SKILL.md) for patterns including model serving, A/B testing with model stages, and custom MLflow plugins for CV-specific artifact types.
+See [`skills/mlflow/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/mlflow/SKILL.md) for patterns including model serving, A/B testing with model stages, and custom MLflow plugins for CV-specific artifact types.

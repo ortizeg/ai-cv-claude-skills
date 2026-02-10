@@ -1,0 +1,15 @@
+[skill]
+name = "opencv"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["computer-vision", "image-processing", "video", "opencv"]
+
+[dependencies]
+requires = ["abstraction-patterns"]
+recommends = ["matplotlib"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+opencv-python = ">=4.8"

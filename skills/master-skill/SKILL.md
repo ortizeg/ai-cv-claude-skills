@@ -1,6 +1,14 @@
+---
+name: master-skill
+description: >
+  Orchestrates new AI/CV project initialization using the whet framework.
+  Guides archetype selection, skill composition, directory scaffolding, and initial
+  configuration for new computer vision and deep learning projects.
+---
+
 # Master Skill: Project Initialization
 
-You are initializing a new AI/CV project using the ai-cv-claude-skills framework.
+You are initializing a new AI/CV project using the whet framework.
 
 ## Initialization Process
 

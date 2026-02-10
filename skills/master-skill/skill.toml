@@ -1,0 +1,13 @@
+[skill]
+name = "master-skill"
+version = "1.0.0"
+category = "core"
+tags = ["conventions", "python", "coding-standards"]
+
+[dependencies]
+requires = []
+recommends = ["pydantic-strict", "code-quality", "loguru"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

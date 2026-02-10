@@ -118,4 +118,4 @@ def process_video_frames(
 
 ## Full Reference
 
-See [`skills/opencv/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/opencv/SKILL.md) for patterns including camera calibration, stereo vision, and high-performance image processing with CUDA-accelerated OpenCV.
+See [`skills/opencv/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/opencv/SKILL.md) for patterns including camera calibration, stereo vision, and high-performance image processing with CUDA-accelerated OpenCV.

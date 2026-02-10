@@ -1,0 +1,15 @@
+[skill]
+name = "tensorboard"
+version = "1.0.0"
+category = "experiment-tracking"
+tags = ["visualization", "tensorboard", "training-monitoring"]
+
+[dependencies]
+requires = ["loguru"]
+recommends = ["pytorch-lightning"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+tensorboard = ">=2.14"

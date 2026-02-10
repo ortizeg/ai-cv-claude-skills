@@ -1,6 +1,10 @@
-name: Test Skills Repository
+name: Test
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
 
 jobs:
   test:
@@ -8,16 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pixi
-        uses: prefix-dev/setup-pixi@v0.8.1
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
         with:
-          pixi-version: latest
+          version: "latest"
 
-      - name: Run tests
-        run: pixi run test-cov
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+
+      - name: Run tests with coverage
+        run: uv run pytest tests/ --cov=src/whet --cov-report=term -v
 
       - name: Run linting
-        run: pixi run lint
+        run: uv run ruff check .
 
       - name: Run type checking
-        run: pixi run typecheck
+        run: uv run mypy src/whet/ tests/ --strict

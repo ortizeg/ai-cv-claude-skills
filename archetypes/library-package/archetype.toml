@@ -1,0 +1,10 @@
+[archetype]
+name = "library-package"
+version = "1.0.0"
+category = "core"
+tags = ["package", "library", "pypi", "reusable"]
+description = "Reusable Python package for PyPI distribution"
+
+[skills]
+required = ["pydantic-strict", "code-quality", "testing", "pypi", "loguru"]
+recommended = ["github-actions", "pre-commit"]

@@ -1,17 +1,51 @@
 # Installation
 
-This guide walks you through setting up the AI/CV Claude Skills framework on your machine.
+This guide walks you through setting up whet and the AI/CV skills framework.
+
+## Quick Install
+
+The fastest way to use whet is via `uvx` (no install needed):
+
+```bash
+# List available skills
+uvx whet list
+
+# Install skills to Claude Code
+uvx whet install --global
+```
+
+Or install permanently:
+
+```bash
+uv tool install whet
+```
 
 ## Prerequisites
 
-Before you begin, ensure you have the following installed:
-
 | Tool | Version | Purpose |
 |------|---------|---------|
+| [uv](https://docs.astral.sh/uv/) | Latest | Python package management |
 | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | Latest | The CLI that loads and uses skills |
-| [Pixi](https://pixi.sh/) | >= 0.30 | Package and environment management |
 | [Git](https://git-scm.com/) | >= 2.30 | Version control |
-| Python | >= 3.10 | Runtime (managed by Pixi) |
+| Python | >= 3.11 | Runtime (managed by uv) |
+
+### Installing uv
+
+uv is the recommended package manager for whet. It handles Python versions, dependencies, and tool installation.
+
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows (PowerShell)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Verify:
+
+```bash
+uv --version
+```
 
 ### Installing Claude Code
 
@@ -21,102 +55,84 @@ Claude Code is Anthropic's official CLI for Claude. Install it via npm:
 npm install -g @anthropic-ai/claude-code
 ```
 
-Verify the installation:
+Verify:
 
 ```bash
 claude --version
 ```
 
-### Installing Pixi
+## Using whet
 
-Pixi is the recommended package manager for this framework. It handles Python versions, CUDA dependencies, and reproducible environments.
+### Install Skills Globally
 
-```bash
-# macOS / Linux
-curl -fsSL https://pixi.sh/install.sh | bash
-
-# Windows (PowerShell)
-iwr -useb https://pixi.sh/install.ps1 | iex
-```
-
-Verify:
+Install all skills to your AI coding agent:
 
 ```bash
-pixi --version
+# Target Claude Code (default)
+whet install --global
+
+# Target Google Antigravity
+whet target antigravity
+whet install --global
+
+# Target Cursor
+whet target cursor
+whet install --global
 ```
 
-## Cloning the Repository
+### Add Skills to a Project
+
+Install specific skills into your current project:
 
 ```bash
-git clone https://github.com/ortizeg/ai-cv-claude-skills.git
-cd ai-cv-claude-skills
+whet add pytorch-lightning wandb hydra-config
 ```
 
-## Repository Layout
-
-After cloning, you will see this structure:
-
-```
-ai-cv-claude-skills/
-    skills/              # 21 skill modules (each with SKILL.md, README.md)
-    agents/              # 4 agent persona definitions
-    archetypes/          # 6 project archetype templates
-    docs/                # Documentation (you are reading it)
-    tests/               # Validation tests for skills
-    mkdocs.yml           # Documentation site configuration
-```
-
-## Configuring Claude Code
-
-The skills framework works by providing Claude Code with context files. There are two ways to use it:
-
-### Option 1: Reference Skills Directly
-
-Point Claude Code at skill files when starting a session:
+### Browse Skills
 
 ```bash
-# Load a specific skill
-claude --skill ./skills/pytorch-lightning/SKILL.md
+# List all skills
+whet list
 
-# Load multiple skills
-claude --skill ./skills/pytorch-lightning/SKILL.md \
-       --skill ./skills/hydra-config/SKILL.md \
-       --skill ./skills/wandb/SKILL.md
+# Search by keyword
+whet search training
+
+# Show skill details
+whet info pytorch-lightning
 ```
 
-### Option 2: Copy Skills Into Your Project
+## Development Setup
 
-For persistent use in a project, copy the relevant skill files into your project's `.claude/` directory:
+If you plan to contribute to whet or run the tests:
 
 ```bash
-# Create the Claude configuration directory in your project
-mkdir -p /path/to/your/project/.claude/skills
-
-# Copy the skills you need
-cp skills/pytorch-lightning/SKILL.md /path/to/your/project/.claude/skills/pytorch-lightning.md
-cp skills/hydra-config/SKILL.md /path/to/your/project/.claude/skills/hydra-config.md
+git clone https://github.com/ortizeg/whet.git
+cd whet
+uv sync --all-extras
 ```
 
-### Option 3: Symlink the Skills Directory
-
-For development workflows where you want the latest skill updates:
+### Running Checks
 
 ```bash
-ln -s /path/to/ai-cv-claude-skills/skills /path/to/your/project/.claude/skills
+# Run all tests
+just test
+
+# Lint
+just lint
+
+# Type check
+just typecheck
+
+# Run everything
+just check
 ```
 
-## Setting Up a Development Environment
-
-If you plan to contribute to the framework itself or run the tests:
+Or directly with uv:
 
 ```bash
-cd ai-cv-claude-skills
-
-# Create environment with Pixi
-pixi install
-
-# Run the test suite
-pixi run pytest tests/
+uv run pytest tests/ -v
+uv run ruff check .
+uv run mypy src/whet/ tests/ --strict
 ```
 
 ## Verifying the Installation
@@ -124,17 +140,26 @@ pixi run pytest tests/
 Run the completeness test to confirm all skills are properly structured:
 
 ```bash
-pixi run pytest tests/test_skills_completeness.py -v
+uv run pytest tests/test_skills_completeness.py -v
 ```
 
 This test verifies that:
 
-- All 21 expected skills exist
-- Each skill has both a `SKILL.md` and `README.md`
+- All skills have YAML frontmatter in SKILL.md
+- Each skill has `SKILL.md`, `README.md`, and `skill.toml`
 - `SKILL.md` files contain substantial content (500+ characters)
 - `SKILL.md` files include code examples and headers
 - `README.md` files explain the skill's purpose
 
+## Supported Platforms
+
+| Platform | Skill Format | Global Directory |
+|----------|-------------|-----------------|
+| **Claude Code** | SKILL.md (native) | `~/.claude/skills/` |
+| **Google Antigravity** | SKILL.md (native) | `~/.gemini/antigravity/skills/` |
+| **Cursor** | .md rules (converted) | `~/.cursor/rules/` |
+| **GitHub Copilot** | Single aggregated file | `~/.github/` |
+
 ## Next Steps
 
-With the framework installed, proceed to the [Quick Start](quick-start.md) guide to create your first AI-assisted CV project.
+With whet installed, proceed to the [Quick Start](quick-start.md) guide to create your first AI-assisted CV project.

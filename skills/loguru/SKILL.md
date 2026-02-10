@@ -1,3 +1,11 @@
+---
+name: loguru
+description: >
+  Structured logging for CV/ML projects using Loguru as a mandatory convention.
+  Covers sink configuration, structured JSON logging, log levels, context binding,
+  and replacing stdlib logging and print statements.
+---
+
 # Loguru Skill
 
 Structured logging for CV/ML projects using loguru. This is a mandatory project convention — all repositories use loguru instead of stdlib `logging` or `print()`.

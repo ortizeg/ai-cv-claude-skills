@@ -73,4 +73,4 @@ PyTorch → torch.onnx.export() → onnxslim.slim() → trtexec/Builder → .eng
 
 ## Full Reference
 
-See [`skills/tensorrt/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/tensorrt/SKILL.md) for Python Builder API, dynamic shape profiles, INT8 calibration, benchmarking utilities, Pydantic configuration, and Dockerfile patterns.
+See [`skills/tensorrt/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/tensorrt/SKILL.md) for Python Builder API, dynamic shape profiles, INT8 calibration, benchmarking utilities, Pydantic configuration, and Dockerfile patterns.

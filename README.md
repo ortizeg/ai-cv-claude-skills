@@ -1,111 +1,108 @@
-# AI/CV Claude Skills
+# whet
 
-[![Tests](https://github.com/ortizeg/ai-cv-claude-skills/actions/workflows/test.yml/badge.svg)](https://github.com/ortizeg/ai-cv-claude-skills/actions/workflows/test.yml)
-[![Docs](https://github.com/ortizeg/ai-cv-claude-skills/actions/workflows/docs.yml/badge.svg)](https://ortizeg.github.io/ai-cv-claude-skills/)
+```
+  ██╗    ██╗██╗  ██╗███████╗████████╗
+  ██║    ██║██║  ██║██╔════╝╚══██╔══╝
+  ██║ █╗ ██║███████║█████╗     ██║
+  ██║███╗██║██╔══██║██╔══╝     ██║
+  ╚███╔███╔╝██║  ██║███████╗   ██║
+   ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝   ╚═╝
+  sharpen your AI coder
+```
+
+[![Tests](https://github.com/ortizeg/whet/actions/workflows/test.yml/badge.svg)](https://github.com/ortizeg/whet/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
-Production-ready skills framework for computer vision and deep learning projects using Claude Code.
-
-## What is This?
-
-A comprehensive, prescriptive framework providing:
-
-- **25 Skills**: Best practices for PyTorch, Pydantic, Docker, testing, and more
-- **4 Specialized Agents**: Code review, testing, ML engineering, and expert coding
-- **6 Project Archetypes**: Ready-to-use templates for common CV/ML workflows
-- **Enforced Standards**: Type safety, code quality, and testing requirements
+**Install expert skills into AI coding agents.** Works with Claude Code, Google Antigravity, Cursor, and GitHub Copilot.
 
 ## Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/ortizeg/ai-cv-claude-skills.git
+# One-shot (no install needed)
+uvx whet list
 
-# Create a new project with Claude Code
-claude
+# Or install permanently
+uv tool install whet
 
-You: "Using ai-cv-claude-skills, create a new pytorch-training-project for object detection"
+# Install all skills to Claude Code
+whet install --global
+
+# Add specific skills to your project
+whet add pytorch-lightning wandb hydra-config
+
+# Scaffold a new project
+whet init pytorch-training-project
 ```
 
-## Core Principles
+## What is whet?
 
-1. **Abstraction First** — Wrap external libraries (VideoReader, ImageLoader, etc.)
-2. **Pydantic Everywhere** — Use Pydantic V2 BaseModel for configs and data structures
-3. **Type Safety** — Full type hints with mypy strict mode, no `Any` unless unavoidable
-4. **Prescriptive Standards** — Enforce configurations, block violations in CI
-5. **Testing Required** — 80%+ coverage, comprehensive test suites
+whet is a CLI tool that installs curated expert skill definitions into AI coding agents. Each skill is a focused knowledge module (300-600 lines of expert guidance) that teaches your AI coder how to use a specific tool or pattern correctly.
 
-## Features
+### Flagship Collection: CV/ML
 
-### Prescriptive Standards
-- Full type hints (mypy strict mode)
-- Pydantic V2 for all configs and data structures
-- 80%+ test coverage requirement
-- Ruff formatting and linting
+- **30 Skills** — PyTorch Lightning, Pydantic, Docker, ONNX, TensorRT, OpenCV, FastAPI, Hugging Face, AWS SageMaker, Gradio, Kubernetes, and more
+- **6 Agents** — Expert Coder, ML Engineer, DevOps/Infra, Data Engineer, Code Review, Test Engineer
+- **6+ Archetypes** — Training pipelines, inference services, notebooks, packages
 
-### Four Agents
-| Agent | Role | Strictness |
-|-------|------|------------|
-| **Expert Coder** | Primary development assistant | Advisory |
-| **ML Engineer** | Architecture and training guidance | Advisory |
-| **Code Review** | Automated quality checks | Blocking |
-| **Test Engineer** | Coverage enforcement | Blocking |
+### Multi-Platform
 
-### Six Archetypes
-| Archetype | Use Case |
-|-----------|----------|
-| PyTorch Training Project | Model training with Lightning, Hydra, experiment tracking |
-| CV Inference Service | FastAPI + ONNX deployment |
-| Research Notebook | Jupyter-based experimentation |
-| Library Package | Reusable Python package for PyPI |
-| Data Processing Pipeline | ETL workflows for datasets |
-| Model Zoo | Collection of pretrained models |
+| Platform | Status | Skill Format |
+|----------|--------|-------------|
+| **Claude Code** | Native | SKILL.md (direct copy) |
+| **Google Antigravity** | Native | SKILL.md (direct copy) |
+| **Cursor** | Adapted | .md rules (converted) |
+| **GitHub Copilot** | Adapted | Single aggregated file |
 
-### 25 Skills
-Skills cover PyTorch Lightning, Pydantic, code quality, Docker, Hydra, testing, OpenCV, visualization, packaging, CI/CD, editor config, pre-commit hooks, experiment tracking (W&B, MLflow, TensorBoard), data versioning (DVC), ONNX export, TensorRT inference, abstraction patterns, library evaluation, and GitHub repository setup.
-
-## Repository Structure
+## Commands
 
 ```
-ai-cv-claude-skills/
-├── skills/          # 25 individual skill definitions
-├── agents/          # 4 agent definitions
-├── archetypes/      # 6 project templates
-├── docs/            # MkDocs Material documentation
-├── tests/           # Self-tests for the skills repo
-├── pixi.toml        # Development environment
-├── pyproject.toml   # Tool configuration
-└── .github/         # CI/CD workflows
+whet                              # Show banner + help
+whet add <skill> [<skill>...]     # Add skill(s) to current project
+whet remove <skill>               # Remove a skill
+whet install [--global|--local]   # Install full skill collection
+whet list [--installed] [--cat]   # Browse available skills
+whet search <query>               # Search by name/tag/description
+whet info <skill>                 # Show skill details + deps
+whet target <platform>            # Set default platform
+whet doctor                       # Health check
+whet config [key] [value]         # Get/set configuration
 ```
 
-## Documentation
+## How It Works
 
-Full documentation: [https://ortizeg.github.io/ai-cv-claude-skills/](https://ortizeg.github.io/ai-cv-claude-skills/)
+Skills follow the universal SKILL.md standard — YAML frontmatter for discovery, markdown content for the LLM:
 
-- [Getting Started](https://ortizeg.github.io/ai-cv-claude-skills/getting-started/installation/)
-- [Skills Reference](https://ortizeg.github.io/ai-cv-claude-skills/skills/)
-- [Agents Guide](https://ortizeg.github.io/ai-cv-claude-skills/agents/)
-- [Project Archetypes](https://ortizeg.github.io/ai-cv-claude-skills/archetypes/)
+```yaml
+---
+name: pytorch-lightning
+description: >
+  PyTorch Lightning training pipeline patterns.
+---
+
+# PyTorch Lightning Skill
+(300-600 lines of expert guidance...)
+```
+
+When you run `whet add pytorch-lightning`, whet copies the skill to your platform's skill directory (e.g., `.claude/skills/`). The AI agent automatically discovers and uses the skill based on your project context.
 
 ## Development
 
 ```bash
-# Install dependencies
-pixi install
+# Clone and install
+git clone https://github.com/ortizeg/whet.git
+cd whet
+uv sync --all-extras
 
-# Run tests
-pixi run test
-
-# Run linting
-pixi run lint
-
-# Build documentation
-pixi run docs-serve
+# Run checks
+just test
+just lint
+just typecheck
 ```
 
 ## Contributing
 
-Contributions welcome! See [Adding Skills Guide](docs/guides/adding-skills.md) for how to add new skills.
+Contributions welcome! See [CLAUDE.md](CLAUDE.md) for how to add new skills, agents, or archetypes.
 
 ## License
 

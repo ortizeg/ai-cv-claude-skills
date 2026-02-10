@@ -1,0 +1,15 @@
+[skill]
+name = "gradio"
+version = "1.0.0"
+category = "infra"
+tags = ["demo", "ui", "gradio", "prototyping", "serving"]
+
+[dependencies]
+requires = ["pydantic-strict", "loguru"]
+recommends = ["huggingface", "fastapi"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+gradio = ">=4.0"

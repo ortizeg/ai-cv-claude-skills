@@ -47,7 +47,7 @@ This archetype packages trained models into production-ready REST API services. 
 
 ```bash
 # Run locally
-pixi run uvicorn my_project.serve:app --reload
+uv run uvicorn my_project.serve:app --reload
 
 # Build and run with Docker
 docker compose up inference

@@ -1,0 +1,13 @@
+[skill]
+name = "library-review"
+version = "1.0.0"
+category = "core"
+tags = ["evaluation", "library-selection", "architecture-decisions"]
+
+[dependencies]
+requires = []
+recommends = ["master-skill"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

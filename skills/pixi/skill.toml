@@ -1,0 +1,13 @@
+[skill]
+name = "pixi"
+version = "1.0.0"
+category = "infra"
+tags = ["package-management", "environment", "conda", "pixi"]
+
+[dependencies]
+requires = []
+recommends = ["code-quality"]
+
+[compatibility]
+python = ">=3.11"
+libraries = {}

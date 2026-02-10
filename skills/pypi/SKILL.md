@@ -1,3 +1,11 @@
+---
+name: pypi
+description: >
+  Complete workflow for packaging and publishing Python projects to PyPI. Covers
+  pyproject.toml configuration, src layout, version management, build system setup,
+  trusted publishers via GitHub Actions, and TestPyPI staging.
+---
+
 # PyPI Publishing Skill
 
 Complete workflow for packaging and publishing Python projects to PyPI. This skill covers `pyproject.toml` configuration, version management, build system setup, src layout, package metadata, entry points, dependency specification, building, publishing to PyPI and TestPyPI, trusted publishers via GitHub Actions, and release automation.

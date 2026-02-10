@@ -90,4 +90,4 @@ services:
 
 ## Full Reference
 
-See [`skills/docker-cv/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/docker-cv/SKILL.md) for patterns including inference-optimized images, TensorRT integration, and Kubernetes deployment manifests.
+See [`skills/docker-cv/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/docker-cv/SKILL.md) for patterns including inference-optimized images, TensorRT integration, and Kubernetes deployment manifests.

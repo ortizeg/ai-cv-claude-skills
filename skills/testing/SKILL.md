@@ -1,3 +1,11 @@
+---
+name: testing
+description: >
+  Comprehensive pytest patterns for ML and computer vision projects. Covers test
+  structure, fixtures, parametrized tests, CV-specific assertions, tensor shape
+  validation, mocking, performance testing, and CI integration.
+---
+
 # Testing Skill
 
 Comprehensive pytest patterns for ML and computer vision projects. This skill covers test structure, fixtures, parametrized tests, CV-specific testing strategies, mocking, performance testing, and CI integration.

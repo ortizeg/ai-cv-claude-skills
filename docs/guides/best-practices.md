@@ -1,6 +1,6 @@
 # Best Practices
 
-Comprehensive best practices for AI/CV projects using the ai-cv-claude-skills framework.
+Comprehensive best practices for AI/CV projects using the whet framework.
 
 ## Project Organization
 

@@ -1,3 +1,11 @@
+---
+name: code-quality
+description: >
+  Enforces code quality standards for AI/CV Python projects using Ruff linting,
+  MyPy strict type checking, and automated formatting. Covers editor integration,
+  pre-commit hooks, and CI pipeline enforcement.
+---
+
 # Code Quality Skill
 
 You are enforcing code quality standards for AI/CV Python projects. Follow these rules exactly.

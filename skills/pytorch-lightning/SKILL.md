@@ -1,3 +1,11 @@
+---
+name: pytorch-lightning
+description: >
+  PyTorch Lightning patterns for AI/CV training pipelines. Covers LightningModule
+  design, LightningDataModule, Trainer configuration, callbacks, logging integration,
+  distributed training, and checkpoint management.
+---
+
 # PyTorch Lightning Skill
 
 You are writing PyTorch Lightning code for AI/CV projects. Follow these patterns exactly.

@@ -1,3 +1,11 @@
+---
+name: gcp
+description: >
+  Google Cloud Platform services for CV/ML projects. Covers Artifact Registry for
+  Docker images, Cloud Storage for datasets, Vertex AI for training jobs, and
+  gcloud CLI patterns for infrastructure management.
+---
+
 # GCP Skill
 
 Google Cloud Platform services for CV/ML projects: Artifact Registry, Cloud Storage, Vertex AI training, and Docker image management.

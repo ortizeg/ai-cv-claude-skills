@@ -1,9 +1,9 @@
 site_name: AI/CV Claude Skills
 site_description: Production-ready skills framework for computer vision and deep learning projects
 site_author: Enrique G. Ortiz
-site_url: https://ortizeg.github.io/ai-cv-claude-skills/
-repo_url: https://github.com/ortizeg/ai-cv-claude-skills
-repo_name: ortizeg/ai-cv-claude-skills
+site_url: https://ortizeg.github.io/whet/
+repo_url: https://github.com/ortizeg/whet
+repo_name: ortizeg/whet
 
 theme:
   name: material
@@ -84,12 +84,19 @@ nav:
     - TensorRT: skills/tensorrt.md
     - Abstraction Patterns: skills/abstraction-patterns.md
     - Library Review: skills/library-review.md
+    - FastAPI: skills/fastapi.md
+    - AWS SageMaker: skills/aws-sagemaker.md
+    - Hugging Face: skills/huggingface.md
+    - Gradio: skills/gradio.md
+    - Kubernetes: skills/kubernetes.md
   - Agents:
     - Overview: agents/index.md
     - Expert Coder: agents/expert-coder.md
     - ML Engineer: agents/ml-engineer.md
     - Code Review: agents/code-review.md
     - Test Engineer: agents/test-engineer.md
+    - DevOps/Infra: agents/devops-infra.md
+    - Data Engineer: agents/data-engineer.md
   - Archetypes:
     - Overview: archetypes/index.md
     - PyTorch Training: archetypes/pytorch-training-project.md

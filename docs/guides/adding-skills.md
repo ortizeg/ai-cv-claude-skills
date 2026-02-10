@@ -1,6 +1,6 @@
 # Adding Skills
 
-This guide explains how to contribute new skills to the ai-cv-claude-skills framework.
+This guide explains how to contribute new skills to the whet framework.
 
 ## Skill Anatomy
 
@@ -127,10 +127,10 @@ nav:
 
 ```bash
 # Run tests to confirm skill is complete
-pixi run pytest tests/test_skills_completeness.py -v
+uv run pytest tests/test_skills_completeness.py -v
 
 # Check documentation builds
-pixi run docs-build
+uv run docs-build
 ```
 
 ## Checklist Before Submitting PR
@@ -141,8 +141,8 @@ pixi run docs-build
 - [ ] Skill added to expected set in `test_skills_completeness.py`
 - [ ] Documentation page created in `docs/skills/`
 - [ ] `mkdocs.yml` nav updated
-- [ ] All tests pass: `pixi run test`
-- [ ] Linting passes: `pixi run lint`
+- [ ] All tests pass: `uv run test`
+- [ ] Linting passes: `uv run lint`
 
 ## Example: Adding an "Albumentations" Skill
 

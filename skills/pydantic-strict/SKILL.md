@@ -1,3 +1,11 @@
+---
+name: pydantic-strict
+description: >
+  Configuration and data validation using Pydantic V2 with strict typing for AI/CV
+  projects. Covers frozen models, discriminated unions, custom validators, settings
+  management, and load-time validation patterns.
+---
+
 # Pydantic Strict Skill
 
 You are writing configuration and data validation code using Pydantic V2 with strict typing. Follow these patterns exactly.

@@ -1,3 +1,11 @@
+---
+name: mlflow
+description: >
+  MLflow integration for experiment tracking, model registry, and model serving in
+  ML projects. Covers self-hosted setup, metric logging, artifact management,
+  model versioning, and opt-in integration patterns.
+---
+
 # MLflow Tracking Integration for ML Projects
 
 ## Overview

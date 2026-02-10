@@ -85,4 +85,4 @@ The skill emphasizes criteria specific to ML work:
 
 ## Full Reference
 
-See [`skills/library-review/SKILL.md`](https://github.com/ortizeg/ai-cv-claude-skills/blob/main/skills/library-review/SKILL.md) for the complete evaluation rubric, including security assessment, license compatibility matrix, and migration cost estimation.
+See [`skills/library-review/SKILL.md`](https://github.com/ortizeg/whet/blob/main/skills/library-review/SKILL.md) for the complete evaluation rubric, including security assessment, license compatibility matrix, and migration cost estimation.

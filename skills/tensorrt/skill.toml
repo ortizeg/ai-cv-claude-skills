@@ -1,0 +1,15 @@
+[skill]
+name = "tensorrt"
+version = "1.0.0"
+category = "cv-ml"
+tags = ["gpu-inference", "nvidia", "tensorrt", "optimization"]
+
+[dependencies]
+requires = ["onnx"]
+recommends = ["docker-cv"]
+
+[compatibility]
+python = ">=3.11"
+
+[compatibility.libraries]
+tensorrt = ">=8.6"
