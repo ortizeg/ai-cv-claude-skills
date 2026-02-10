@@ -39,7 +39,7 @@ def init_project(
 
     Without arguments, lists available archetypes.
     """
-    cfg = WhetConfig()
+    cfg = WhetConfig.load()
 
     if archetype_name is None:
         _list_archetypes(cfg)

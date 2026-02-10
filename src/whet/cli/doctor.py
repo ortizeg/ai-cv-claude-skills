@@ -28,7 +28,7 @@ def doctor() -> None:
     issues = 0
     warnings = 0
 
-    cfg = WhetConfig()
+    cfg = WhetConfig.load()
 
     # Check 1: Skills directory
     if cfg.skills_dir.is_dir():
