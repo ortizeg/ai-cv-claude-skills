@@ -85,6 +85,23 @@ strict = true
 warn_return_any = true
 warn_unused_ignores = true
 
+[[tool.mypy.overrides]]
+module = ["typer", "typer.*"]
+ignore_missing_imports = true
+disallow_untyped_decorators = false
+
+[[tool.mypy.overrides]]
+module = ["whet.cli.*"]
+disallow_untyped_decorators = false
+
+[[tool.mypy.overrides]]
+module = ["yaml"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["tomli"]
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]

@@ -2,11 +2,15 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import typer
 from rich.console import Console
 
+from whet.adapters.base import PlatformAdapter
 from whet.cli import app
-from whet.core.config import WhetConfig
+from whet.core.config import Platform, WhetConfig
+from whet.core.skill import Skill
 from whet.registry.loader import discover_skills
 
 console = Console()
@@ -42,7 +46,9 @@ def install(
         _install_to(adapter, all_skills, paths.local_dir, "local")
 
 
-def _install_to(adapter, skills, target_dir, scope_label):  # type: ignore[no-untyped-def]
+def _install_to(
+    adapter: PlatformAdapter, skills: list[Skill], target_dir: Path, scope_label: str
+) -> None:
     """Install skills to a target directory."""
     console.print(f"\n[bold]Installing {len(skills)} skills ({scope_label})...[/bold]")
 
@@ -57,14 +63,13 @@ def _get_config() -> WhetConfig:
     return WhetConfig()
 
 
-def _get_adapter(platform):  # type: ignore[no-untyped-def]
+def _get_adapter(platform: Platform) -> PlatformAdapter:
     from whet.adapters.antigravity import AntigravityAdapter
     from whet.adapters.claude import ClaudeAdapter
     from whet.adapters.copilot import CopilotAdapter
     from whet.adapters.cursor import CursorAdapter
-    from whet.core.config import Platform
 
-    adapters = {
+    adapters: dict[Platform, type[PlatformAdapter]] = {
         Platform.CLAUDE: ClaudeAdapter,
         Platform.ANTIGRAVITY: AntigravityAdapter,
         Platform.CURSOR: CursorAdapter,
