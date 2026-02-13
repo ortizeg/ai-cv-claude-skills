@@ -89,6 +89,7 @@ nav:
     - Hugging Face: skills/huggingface.md
     - Gradio: skills/gradio.md
     - Kubernetes: skills/kubernetes.md
+    - Interface Design: skills/interface-design.md
   - Agents:
     - Overview: agents/index.md
     - Expert Coder: agents/expert-coder.md

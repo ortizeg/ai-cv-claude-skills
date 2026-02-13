@@ -76,6 +76,14 @@ Skills for packaging, deploying, and maintaining projects.
 | [VS Code](vscode.md) | Editor configuration for ML development | VS Code |
 | [DVC](dvc.md) | Data and model version control | DVC |
 
+### Design & Frontend
+
+Skills for interface design and UI development.
+
+| Skill | Description | Key Libraries |
+|-------|-------------|---------------|
+| [Interface Design](interface-design.md) | Craft-driven UI for dashboards, admin panels, and apps | CSS, HTML |
+
 ### Process & Review
 
 Skills for code review and architectural decisions.
